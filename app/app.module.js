@@ -7,5 +7,8 @@ angular.module('mutantApp', [
 
   //3rd party modules
   'firebase',
+
+  //custom modules
+  'mutantApp.home',
 ])
 })();
