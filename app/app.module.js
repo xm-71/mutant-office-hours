@@ -10,5 +10,5 @@ angular.module('mutantApp', [
 
   //custom modules
   'mutantApp.home',
-])
+]);
 })();

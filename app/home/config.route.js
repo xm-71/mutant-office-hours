@@ -9,7 +9,7 @@ configFunction.$inject = ['$stateProvider'];
 function configFunction($stateProvider){
   $stateProvider.state('home', {
     url: '/',
-    templateUrl: app/home/home.html
-  })
+    templateUrl: 'app/home/home.html'
+  });
 }
 })();
