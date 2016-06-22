@@ -5,7 +5,7 @@
   .module('mutantApp.auth')
   .config(configFunction);
 
-  configFunction.$inject = {'$stateProvider'};
+  configFunction.$inject = ['$stateProvider'];
 
   function configFunction($stateProvider){
     $stateProvider.state('register', {
