@@ -8,20 +8,20 @@
 </head>
 
 <body>
-  <div class="top-bar" id="main-menu">
+  <div ng-controller="AuthController as vm" class="top-bar" id="main-menu">
      <div class="top-bar-left">
        <ul class="dropdown menu" data-dropdown-menu>
-         <li class="menu-text">Mutant School</li>
+         <li class="menu-text" ui-sref="home">Mutant School</li>
        </ul>
      </div>
      <div class="top-bar-right">
        <ul class="menu" data-responsive-menu="drilldown medium-dropdown">
-         <li><a href="#">Log in</a></li>
-         <li><a href="#">Log out</a></li>
+         <li><a ui-sref="login">Log in</a></li>
+         <li><a ng-click="vm.logout()">Log out</a></li>
        </ul>
      </div>
    </div>
-   
+
     <div ui-view class="row" id="main">
 
     </div>
