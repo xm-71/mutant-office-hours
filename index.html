@@ -7,9 +7,6 @@
 <link rel="stylesheet" href="app/content/css/app.css" />
 </head>
 
-
-
-
 <body>
 
     <div ui-view class="row" id="main">
@@ -21,14 +18,23 @@
   <script src="https://cdnjs.cloudflare.com/ajax/libs/foundation/6.2.3/foundation.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.5.7/angular.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/angular-ui-router/0.3.1/angular-ui-router.min.js"></script>
-  <script src="https://cdn.firebase.com/js/client/2.4.2/firebase.js"></script>
-  <script src="https://cdn.firebase.com/libs/angularfire/1.2.0/angularfire.min.js"></script>
-  <!--Main App modules-->
+  <script src="https://www.gstatic.com/firebasejs/3.0.4/firebase.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/angularFire/2.0.1/angularfire.min.js"></script>
+     <!--Main App modules-->
 
   <script src="app/app.module.js"></script>
 
   <!--home modules-->
   <script src="app/home/home.module.js"></script>
   <script src="app/home/config.route.js"></script>
+
+  <!--mutantList modules-->
+  <script src="app/mutantList/mutantList.module.js"></script>
+  <script src="app/mutantList/mutantList.controller.js"></script>
+  <script src="app/mutantList/config.route.js"></script>
+  <!--firebase-->
+  <script src="app/firebaseconfig.js"></script>
+
+
 </body>
 </html>

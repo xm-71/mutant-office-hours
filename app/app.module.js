@@ -1,14 +1,15 @@
-(function(){
-'use strict';
+(function() {
+  'use strict';
 
-angular.module('mutantApp', [
-  //angular modules
-  'ui.router',
+  angular.module('mutantApp', [
+    // Angular modules
+    'ui.router',
 
-  //3rd party modules
-  'firebase',
+    // 3rd Party modules
+    'firebase',
 
-  //custom modules
-  'mutantApp.home',
-]);
+    // Custom modules
+    'mutantApp.home',
+    'mutantApp.mutantList',
+  ]);
 })();
