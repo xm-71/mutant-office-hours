@@ -11,5 +11,6 @@
     // Custom modules
     'mutantApp.home',
     'mutantApp.mutantList',
+    'mutantApp.auth'
   ]);
 })();
