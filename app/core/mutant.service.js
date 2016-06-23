@@ -10,7 +10,7 @@
   function mutantService($firebaseArray, firebaseDataService) {
     var service = {
       Mutant: Mutant,
-      mutants: $firebaseArray(firebaseDataService.root.child('mutants')),
+      mutants: $firebaseArray(firebaseDataService.mutants),
     };
 
     return service;
