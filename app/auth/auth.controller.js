@@ -31,7 +31,7 @@
     }
 
     function login(user) {
-      return auth.$signInWithEmailAndPassword(user.email, user.password)
+      return authService.login(user)
         .then(function(loggedInUser) {
           $state.go('mutantList');
         })
@@ -40,8 +40,8 @@
         });
     }
 
-    function logout() {
-      auth.$signOut();
+    function logout(user) {
+      authService.logout(user)
       $state.go('home');
     }
   }
