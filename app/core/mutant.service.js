@@ -1,9 +1,26 @@
-(function(){
+(function() {
   'use strict';
 
+  angular
+    .module('mutantApp.core')
+    .factory('mutantService', mutantService);
 
+  mutantService.$inject = ['$firebaseArray', 'firebaseDataService'];
 
-angular
-.module('mutantApp.core')
-.factory('mutantService', mutantService);
+  function mutantService($firebaseArray, firebaseDataService) {
+    var service = {
+      Mutant: Mutant,
+      mutants: $firebaseArray(firebaseDataService.root.child('mutants')),
+    };
+
+    return service;
+
+    function Mutant() {
+      this.name = '';
+      this.phone = '';
+      this.topic = '';
+      this.notified = false;
+      this.complete = false;
+    }
+  }
 })();
