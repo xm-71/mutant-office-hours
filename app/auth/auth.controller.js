@@ -7,14 +7,11 @@
 
   AuthController.$inject = ['$state', 'authService'];
 
-  function AuthController( $state, authService) {
+  function AuthController($state, authService) {
     var vm = this;
 
     vm.register = register;
     vm.login = login;
-    vm.logout = logout;
-    vm.isLoggedIn = authService.isLoggedIn;
-    
 
     vm.user = {
       email: '',
@@ -41,9 +38,5 @@
         });
     }
 
-    function logout() {
-      authService.logout();
-      $state.go('home');
-    }
   }
 })();
