@@ -12,6 +12,7 @@ function authService($firebaseAuth){
     login: login,
     logout: logout,
     isLoggedIn: isLoggedIn,
+    auth: auth,
 
   };
 
