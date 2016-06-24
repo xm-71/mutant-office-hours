@@ -11,6 +11,7 @@ function authService($firebaseAuth){
     register: register,
     login: login,
     logout: logout,
+    isLoggedIn: isLoggedIn,
 
   };
 
@@ -28,6 +29,10 @@ function login(user){
 
 function logout(){
   return auth.$signOut();
+}
+
+function isLoggedIn(){
+  return auth.$getAuth();
 }
 
 }
