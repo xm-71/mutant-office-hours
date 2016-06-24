@@ -5,11 +5,10 @@
     .module('mutantApp.auth')
     .controller('AuthController', AuthController);
 
-  AuthController.$inject = ['$firebaseAuth', '$state', 'authService'];
+  AuthController.$inject = ['$state', 'authService'];
 
-  function AuthController($firebaseAuth, $state, authService) {
+  function AuthController( $state, authService) {
     var vm = this;
-    var auth = $firebaseAuth();
 
     vm.register = register;
     vm.login = login;
