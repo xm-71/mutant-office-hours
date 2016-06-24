@@ -40,8 +40,8 @@
         });
     }
 
-    function logout(user) {
-      authService.logout(user)
+    function logout() {
+      authService.logout();
       $state.go('home');
     }
   }

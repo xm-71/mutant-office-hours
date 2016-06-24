@@ -26,7 +26,7 @@ function login(user){
   return auth.$signInWithEmailAndPassword(user.email, user.password)
 }
 
-function logout(user){
+function logout(){
   return auth.$signOut();
 }
 
