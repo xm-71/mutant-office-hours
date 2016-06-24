@@ -15,4 +15,11 @@
     'mutantApp.core',
     'mutantApp.layout'
   ]);
+  .config(configFunction);
+
+  configFunction.$inject = ['$urlRouterProvider'];
+
+  function configFunction($urlRouterProvider) {
+    $urlRouterProvider.otherwise('/');
+  }
 })();
