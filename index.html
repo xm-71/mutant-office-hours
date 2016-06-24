@@ -7,24 +7,7 @@
 <link rel="stylesheet" href="app/content/css/app.css" />
 </head>
 
-<body>
-  <div ng-controller="AuthController as vm" class="top-bar" id="main-menu">
-     <div class="top-bar-left">
-       <ul class="dropdown menu" data-dropdown-menu>
-         <li class="menu-text" ui-sref="home">Mutant School</li>
-       </ul>
-     </div>
-     <div class="top-bar-right">
-       <ul class="menu" data-responsive-menu="drilldown medium-dropdown">
-         <li><a ui-sref="login" ng-show="!vm.isLoggedIn()">Log in</a></li>
-         <li><a ng-click="vm.logout()" ng-show="vm.isLoggedIn()">Log out</a></li>
-       </ul>
-     </div>
-   </div>
 
-    <div ui-view class="row" id="main">
-
-    </div>
 
   <!--3rd party scripts-->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
