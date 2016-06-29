@@ -8,12 +8,12 @@
         <div class="callout small alert" ng-show="vm.error" ng-bind="vm.error"></div>
 
         <label>Email
-          <input ng-model="vm.user.email" type="email" name="email" placeholder="somebody@example.com" autofocus required>
+          <input ng-model="vm.user.email" type="email" name="email" placeholder="somebody@example.com" ng-model-options="{ updateOn: 'default blur', debounce: {'default': 1000, 'blur': 0} }" autofocus required>
         </label>
 
         <!-- Email errors -->
         <div class="callout small alert" ng-show="authForm.$submitted && authForm.email.$error.required">
-          You done goofed. You need an email address.
+          You need an email address.
         </div>
         <div class="callout small alert" ng-show="authForm.$submitted && authForm.email.$error.email">
           Invalid email
