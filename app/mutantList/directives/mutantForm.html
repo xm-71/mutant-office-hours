@@ -1,0 +1,14 @@
+<form ng-submit="vm.addMutant()">
+  <div class="medium-3 small-6 columns">
+    <input ng-model="vm.newMutant.name" type="text" name="mutantName" placeholder="Name" required>
+  </div>
+  <div class="medium-3 small-6 columns">
+    <input ng-model="vm.newMutant.phone" type="text" name="phone" placeholder="Phone #" required>
+  </div>
+  <div class="medium-4 small-8 columns">
+    <input ng-model="vm.newMutant.topic" type="text" name="topic" placeholder="Topic" required>
+  </div>
+  <div class="medium-2 small-4 columns">
+    <button type="submit" class="expanded button">Submit</button>
+  </div>
+</form>

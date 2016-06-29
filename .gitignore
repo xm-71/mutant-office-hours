@@ -47,3 +47,4 @@ Temporary Items
 .apdisk
 
 app/firebaseconfig.js
+dir_to_ignore/node_modules

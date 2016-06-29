@@ -1,41 +1,48 @@
-(function(){
-'use strict';
+(function() {
+  'use strict';
 
-angular.module('mutantApp.auth').factory('authService', authService);
+  angular
+    .module('mutantApp.auth')
+    .factory('authService', authService);
 
-authService.$inject = ['$firebaseAuth'];
+  authService.$inject = ['$firebaseAuth', 'firebaseDataService', 'mutantService'];
 
-function authService($firebaseAuth){
-  var auth = $firebaseAuth();
-  var service = {
-    register: register,
-    login: login,
-    logout: logout,
-    isLoggedIn: isLoggedIn,
-    auth: auth,
+  function authService($firebaseAuth, firebaseDataService, mutantService) {
+    var auth = $firebaseAuth();
 
-  };
+    var service = {
+      register: register,
+      login: login,
+      logout: logout,
+      isLoggedIn: isLoggedIn,
+      auth: auth,
+      sendWelcomeEmail: sendWelcomeEmail,
+    };
 
-return service;
+    return service;
 
-//sepppppp
+    function register(user) {
+      return auth.$createUserWithEmailAndPassword(user.email, user.password);
+    }
 
-function register(user){
-  return auth.$createUserWithEmailAndPassword(user.email, user.password)
-}
+    function login(user) {
+      return auth.$signInWithEmailAndPassword(user.email, user.password);
+    }
 
-function login(user){
-  return auth.$signInWithEmailAndPassword(user.email, user.password)
-}
+    function logout() {
+      mutantService.reset();
+      auth.$signOut();
+    }
 
-function logout(){
-  return auth.$signOut();
-}
+    function isLoggedIn() {
+      return auth.$getAuth();
+    }
 
-function isLoggedIn(){
-  return auth.$getAuth();
-}
+    function sendWelcomeEmail(emailAddress) {
+      firebaseDataService.emails.push({
+        emailAddress: emailAddress
+      });
+    }
 
-}
-
+  }
 })();
