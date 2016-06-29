@@ -11,15 +11,16 @@
     var auth = $firebaseAuth();
 
     var service = {
-      auth: auth,
       register: register,
       login: login,
       logout: logout,
       isLoggedIn: isLoggedIn,
+      auth: auth,
       sendWelcomeEmail: sendWelcomeEmail,
     };
 
     return service;
+
 
     function register(user) {
       return auth.$createUserWithEmailAndPassword(user.email, user.password);
@@ -43,5 +44,6 @@
         emailAddress: emailAddress
       });
     }
+
   }
 })();

@@ -1,28 +1,34 @@
 <div class="medium-6 medium-centered large-4 large-centered columns">
 
-    <form ng-submit="vm.login(vm.user)" name="authForm.$valid" novalidate>
+    <form name="authForm" ng-submit="authForm.$valid && vm.login(vm.user)" novalidate>
       <div class="column log-in-form">
         <h4 class="text-center">Log in</h4>
+
         <!-- Server Authentication Errors -->
-        <div class="callout small alert" ng-show="vm.error" ng-bind="vm.error">
-        </div>
+        <div class="callout small alert" ng-show="vm.error" ng-bind="vm.error"></div>
+
         <label>Email
-          <input ng-model="vm.user.email" type="email" name="email" placeholder="somebody@example.com" required autofocus>
+          <input ng-model="vm.user.email" type="email" name="email" placeholder="somebody@example.com" autofocus required>
         </label>
+
         <!-- Email errors -->
         <div class="callout small alert" ng-show="authForm.$submitted && authForm.email.$error.required">
-          You need an email address to enter
+          You done goofed. You need an email address.
         </div>
-        <div class="callout small alert" ng-show="authForm.$submitted && authForm.email.$error.required">
-          invalid email
+        <div class="callout small alert" ng-show="authForm.$submitted && authForm.email.$error.email">
+          Invalid email
         </div>
 
         <label>Password
           <input ng-model="vm.user.password" type="password" name="password" placeholder="Password" required>
         </label>
+
+        <!-- Password errors -->
         <div class="callout small alert" ng-show="authForm.$submitted && authForm.password.$error.required">
-          invalid password
+          Please enter password
         </div>
+
+
         <p><button type="submit" class="button expanded">Log in</button></p>
       </div>
     </form>
